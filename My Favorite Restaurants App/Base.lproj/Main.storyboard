@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wn6-mg-gI3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="b4B-X5-LaA">
+            <objects>
+                <tabBarController id="Wn6-mg-gI3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MdX-5x-rAG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="P6x-vu-l1u" kind="relationship" relationship="viewControllers" id="q2e-vC-bOd"/>
+                        <segue destination="Tfd-du-mOd" kind="relationship" relationship="viewControllers" id="MRU-lW-7IK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwZ-64-GpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1422" y="-72"/>
+        </scene>
+        <!--Add New Restaurant-->
+        <scene sceneID="Cyh-lw-sFj">
+            <objects>
+                <viewController id="Tfd-du-mOd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xla-tj-dRH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vNG-E7-Yw6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Add New Restaurant" id="8Jf-Hl-KtB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CSy-d1-JPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-484" y="385"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="tWY-Mc-wfX">
+            <objects>
+                <viewController storyboardIdentifier="MyFavoritesList" id="P6x-vu-l1u" customClass="MyFavoritesList" customModule="My_Favorite_Restaurants_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z8e-HJ-cvb" userLabel="superView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bh4-MW-GqV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Favorite Restaurants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luw-Fv-E62">
+                                        <rect key="frame" x="48" y="22.5" width="279" height="28"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76078431372549016" green="0.21176470588235294" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="luw-Fv-E62" firstAttribute="centerY" secondItem="Bh4-MW-GqV" secondAttribute="centerY" multiplier="1.1" id="LY1-ZM-Co6"/>
+                                    <constraint firstItem="luw-Fv-E62" firstAttribute="centerX" secondItem="Bh4-MW-GqV" secondAttribute="centerX" id="tz9-he-j4E"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kET-c3-KxM">
+                                <rect key="frame" x="0.0" y="66.5" width="375" height="551.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="P6x-vu-l1u" id="nuC-LP-MQX"/>
+                                    <outlet property="delegate" destination="P6x-vu-l1u" id="ZSW-N1-7iI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xb6-eD-UAi" firstAttribute="trailing" secondItem="kET-c3-KxM" secondAttribute="trailing" id="6fQ-wG-Uos"/>
+                            <constraint firstItem="kET-c3-KxM" firstAttribute="leading" secondItem="Xb6-eD-UAi" secondAttribute="leading" id="DCB-lt-YgM"/>
+                            <constraint firstItem="kET-c3-KxM" firstAttribute="top" secondItem="Bh4-MW-GqV" secondAttribute="bottom" id="K7F-VQ-mYJ"/>
+                            <constraint firstItem="Xb6-eD-UAi" firstAttribute="bottom" secondItem="kET-c3-KxM" secondAttribute="bottom" id="Sky-sf-Hqm"/>
+                            <constraint firstItem="Bh4-MW-GqV" firstAttribute="height" secondItem="z8e-HJ-cvb" secondAttribute="height" multiplier="0.1" id="g3f-bA-aru"/>
+                            <constraint firstItem="Bh4-MW-GqV" firstAttribute="top" secondItem="z8e-HJ-cvb" secondAttribute="top" id="nxZ-Re-wl4"/>
+                            <constraint firstItem="Bh4-MW-GqV" firstAttribute="trailing" secondItem="Xb6-eD-UAi" secondAttribute="trailing" id="wbN-fZ-LxM"/>
+                            <constraint firstItem="Bh4-MW-GqV" firstAttribute="leading" secondItem="Xb6-eD-UAi" secondAttribute="leading" id="zUb-U0-KvO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xb6-eD-UAi"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="VY1-JV-zts"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajy-iS-Drc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-495" y="-367"/>
+        </scene>
+    </scenes>
+</document>

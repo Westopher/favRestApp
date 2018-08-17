@@ -40,6 +40,8 @@ extension YelpClient {
                 DispatchQueue.main.async {
                     completion(nil, error as NSError?)
                 }
+            } else {
+                print("Yelp return JSON : \(response!)" )
             }
             guard let data = data else {
                 DispatchQueue.main.async {

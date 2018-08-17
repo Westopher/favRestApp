@@ -29,7 +29,7 @@ class YelpClient: NSObject {
 // get - barList
 extension YelpClient {
     
-    func barList(completion: @escaping (_ results: [BarModel]?, _ error: NSError?) -> Void) {
+    func barList(completion: @escaping (_ results: [Restaurant]?, _ error: NSError?) -> Void) {
         guard let request = makeRequest(url: yelpRequest.barListURL!,
                                         method: method,
                                         headerValue: headerValue,
@@ -49,12 +49,12 @@ extension YelpClient {
             }
             
             // decoder
-            var barModels = [BarModel]()
+            var restaurantCall = [Restaurant]()
             do {
                 let decoder = JSONDecoder()
                 let service = try decoder.decode(YelpBarService.self, from: data)
                 for business in service.businesses {
-                    let barModel = BarModel(id: business.id,
+                    let barModel = restaurantCall(id: business.id,
                                             name: business.name,
                                             city: business.location.city,
                                             distance: Int(business.distance),

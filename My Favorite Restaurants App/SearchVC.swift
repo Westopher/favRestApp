@@ -30,9 +30,10 @@ class SearchVC: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate
             return
             }
             if (latitude != nil) {
-                
+                let yelpRequest = YelpRequest
             }
         }
+        
     }
     
     override func viewDidLoad() {

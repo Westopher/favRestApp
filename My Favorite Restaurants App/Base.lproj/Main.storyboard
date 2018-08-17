@@ -56,11 +56,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzO-e5-Rq0">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzO-e5-Rq0">
                                         <rect key="frame" x="74.5" y="64" width="226" height="35"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.25490196079999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Search For Restaurants">
-                                            <color key="titleColor" red="0.70196078431372544" green="0.25490196078431371" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="Tfd-du-mOd" eventType="touchUpInside" id="qLa-of-3Xj"/>
@@ -90,7 +91,7 @@
         <!--Search Results-->
         <scene sceneID="yUU-tr-REA">
             <objects>
-                <viewController title="Search Results" id="sTx-qq-ezS" sceneMemberID="viewController">
+                <viewController title="Search Results" id="sTx-qq-ezS" customClass="ResultsVC" customModule="My_Favorite_Restaurants_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ocR-Ye-iJh"/>
                         <viewControllerLayoutGuide type="bottom" id="Tcg-Vp-QML"/>
@@ -118,6 +119,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEk-Re-Tlz">
                                 <rect key="frame" x="0.0" y="66.5" width="375" height="600.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sTx-qq-ezS" id="ChH-4W-KZJ"/>
+                                    <outlet property="delegate" destination="sTx-qq-ezS" id="WZr-M7-pif"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -132,6 +137,9 @@
                             <constraint firstItem="8ji-P0-Gne" firstAttribute="leading" secondItem="Hq9-pk-2WD" secondAttribute="leading" id="xyF-TE-Ioh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="VEk-Re-Tlz" id="mY6-qj-yWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDZ-C2-CFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

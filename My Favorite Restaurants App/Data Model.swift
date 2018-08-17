@@ -23,6 +23,8 @@ let baseURL = "https://api.yelp.com/v3/businesses/search"
 
 // Create restaurant class:
 
+var restaurants = [Restaurant]()
+
 class Restaurant: NSObject {
     let id: String
     let keyword: String
@@ -31,15 +33,17 @@ class Restaurant: NSObject {
     let reviewStars: String
     let distance: String
     let address: String
+    let restType: String
     
-    init (id: String, keyword: String, name: String, image: UIImage, reviewStars: String, distance: String, address: String) {
+    init (id: String, keyword: String, name: String, image: UIImage, reviewStars: String, distance: String, address: String, restType: String) {
         self.id = id
         self.keyword = keyword
-        self.name = keyword
+        self.name = name
         self.image = image
         self.reviewStars = reviewStars
         self.distance = distance
         self.address = address
+        self.restType = restType
         super.init()
     }
 }

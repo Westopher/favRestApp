@@ -18,6 +18,8 @@
 		3DEB9F2B211A5BC4004ED439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DEB9F2A211A5BC4004ED439 /* Assets.xcassets */; };
 		3DEB9F2E211A5BC4004ED439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEB9F2C211A5BC4004ED439 /* LaunchScreen.storyboard */; };
 		3DEB9F36211A6369004ED439 /* MyFavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB9F35211A6369004ED439 /* MyFavoritesList.swift */; };
+		3DF994B12126442700DB4B84 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF994AF2126442700DB4B84 /* RestaurantCell.swift */; };
+		3DF994B22126442700DB4B84 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF994B02126442700DB4B84 /* RestaurantCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		3DEB9F2D211A5BC4004ED439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DEB9F2F211A5BC4004ED439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DEB9F35211A6369004ED439 /* MyFavoritesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesList.swift; sourceTree = "<group>"; };
+		3DF994AF2126442700DB4B84 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		3DF994B02126442700DB4B84 /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				3DEB9F23211A5BC3004ED439 /* AppDelegate.swift */,
 				3DEB9F27211A5BC3004ED439 /* Main.storyboard */,
+				3DF994AF2126442700DB4B84 /* RestaurantCell.swift */,
+				3DF994B02126442700DB4B84 /* RestaurantCell.xib */,
 				3DEB9F35211A6369004ED439 /* MyFavoritesList.swift */,
 				3DE188FA2123910600B087B0 /* Data Model.swift */,
 				3DE188FC2123968400B087B0 /* SearchVC.swift */,
@@ -148,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF994B22126442700DB4B84 /* RestaurantCell.xib in Resources */,
 				3DEB9F2E211A5BC4004ED439 /* LaunchScreen.storyboard in Resources */,
 				3DEB9F2B211A5BC4004ED439 /* Assets.xcassets in Resources */,
 				3DEB9F29211A5BC3004ED439 /* Main.storyboard in Resources */,
@@ -161,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF994B12126442700DB4B84 /* RestaurantCell.swift in Sources */,
 				3D61AF9C21263695005495F5 /* YelpRequest.swift in Sources */,
 				3D61AF9821263688005495F5 /* Constants.swift in Sources */,
 				3DE188FD2123968400B087B0 /* SearchVC.swift in Sources */,

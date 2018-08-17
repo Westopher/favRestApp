@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wn6-mg-gI3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wn6-mg-gI3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,6 +33,10 @@
         <scene sceneID="Cyh-lw-sFj">
             <objects>
                 <viewController id="Tfd-du-mOd" customClass="SearchVC" customModule="My_Favorite_Restaurants_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QCB-eK-gJm"/>
+                        <viewControllerLayoutGuide type="bottom" id="DYP-kx-lxz"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xla-tj-dRH" userLabel="superView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +76,6 @@
                             <constraint firstItem="wZG-IY-lMo" firstAttribute="centerX" secondItem="Xla-tj-dRH" secondAttribute="centerX" id="oV1-Tf-fVN"/>
                             <constraint firstItem="wZG-IY-lMo" firstAttribute="width" secondItem="Xla-tj-dRH" secondAttribute="width" id="pls-sj-VYj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vNG-E7-Yw6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" systemItem="search" id="8Jf-Hl-KtB"/>
                     <connections>
@@ -88,29 +91,46 @@
         <scene sceneID="yUU-tr-REA">
             <objects>
                 <viewController title="Search Results" id="sTx-qq-ezS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ocR-Ye-iJh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tcg-Vp-QML"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hq9-pk-2WD" userLabel="superView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZWf-uv-vma">
-                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ji-P0-Gne">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qiw-tN-Vjb">
+                                        <rect key="frame" x="89" y="16" width="196" height="34"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.70196078429999997" green="0.25490196079999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Qiw-tN-Vjb" firstAttribute="centerY" secondItem="8ji-P0-Gne" secondAttribute="centerY" id="E30-TL-aEf"/>
+                                    <constraint firstItem="Qiw-tN-Vjb" firstAttribute="centerX" secondItem="8ji-P0-Gne" secondAttribute="centerX" id="fxB-0k-4Cf"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEk-Re-Tlz">
+                                <rect key="frame" x="0.0" y="66.5" width="375" height="600.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k8-j3-cKO">
-                                <rect key="frame" x="130" y="20" width="114" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZWf-uv-vma" firstAttribute="trailing" secondItem="1yg-cY-HuG" secondAttribute="trailing" id="6qt-2h-Dud"/>
-                            <constraint firstItem="ZWf-uv-vma" firstAttribute="bottom" secondItem="1yg-cY-HuG" secondAttribute="bottom" id="8Vd-qf-AK7"/>
-                            <constraint firstItem="ZWf-uv-vma" firstAttribute="leading" secondItem="1yg-cY-HuG" secondAttribute="leading" id="Tgr-bY-jtm"/>
+                            <constraint firstItem="Tcg-Vp-QML" firstAttribute="top" secondItem="VEk-Re-Tlz" secondAttribute="bottom" id="4yW-16-eXC"/>
+                            <constraint firstItem="8ji-P0-Gne" firstAttribute="top" secondItem="Hq9-pk-2WD" secondAttribute="top" id="M3u-oX-zAR"/>
+                            <constraint firstItem="VEk-Re-Tlz" firstAttribute="leading" secondItem="Hq9-pk-2WD" secondAttribute="leading" id="MeC-xa-ixY"/>
+                            <constraint firstAttribute="trailing" secondItem="8ji-P0-Gne" secondAttribute="trailing" id="QcY-Zf-24x"/>
+                            <constraint firstItem="VEk-Re-Tlz" firstAttribute="top" secondItem="8ji-P0-Gne" secondAttribute="bottom" id="jVA-u7-jL7"/>
+                            <constraint firstItem="8ji-P0-Gne" firstAttribute="height" secondItem="Hq9-pk-2WD" secondAttribute="height" multiplier="0.1" id="k7U-wm-Bu7"/>
+                            <constraint firstAttribute="trailing" secondItem="VEk-Re-Tlz" secondAttribute="trailing" id="mRa-Gg-7me"/>
+                            <constraint firstItem="8ji-P0-Gne" firstAttribute="leading" secondItem="Hq9-pk-2WD" secondAttribute="leading" id="xyF-TE-Ioh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1yg-cY-HuG"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDZ-C2-CFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,6 +141,10 @@
         <scene sceneID="tWY-Mc-wfX">
             <objects>
                 <viewController storyboardIdentifier="MyFavoritesList" id="P6x-vu-l1u" customClass="MyFavoritesList" customModule="My_Favorite_Restaurants_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RT8-pj-bNa"/>
+                        <viewControllerLayoutGuide type="bottom" id="CJ7-9c-N6h"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="z8e-HJ-cvb" userLabel="superView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,16 +176,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Xb6-eD-UAi" firstAttribute="trailing" secondItem="kET-c3-KxM" secondAttribute="trailing" id="6fQ-wG-Uos"/>
-                            <constraint firstItem="kET-c3-KxM" firstAttribute="leading" secondItem="Xb6-eD-UAi" secondAttribute="leading" id="DCB-lt-YgM"/>
+                            <constraint firstAttribute="trailing" secondItem="kET-c3-KxM" secondAttribute="trailing" id="6fQ-wG-Uos"/>
+                            <constraint firstItem="kET-c3-KxM" firstAttribute="leading" secondItem="z8e-HJ-cvb" secondAttribute="leading" id="DCB-lt-YgM"/>
                             <constraint firstItem="kET-c3-KxM" firstAttribute="top" secondItem="Bh4-MW-GqV" secondAttribute="bottom" id="K7F-VQ-mYJ"/>
-                            <constraint firstItem="Xb6-eD-UAi" firstAttribute="bottom" secondItem="kET-c3-KxM" secondAttribute="bottom" id="Sky-sf-Hqm"/>
+                            <constraint firstItem="CJ7-9c-N6h" firstAttribute="top" secondItem="kET-c3-KxM" secondAttribute="bottom" id="Sky-sf-Hqm"/>
                             <constraint firstItem="Bh4-MW-GqV" firstAttribute="height" secondItem="z8e-HJ-cvb" secondAttribute="height" multiplier="0.1" id="g3f-bA-aru"/>
                             <constraint firstItem="Bh4-MW-GqV" firstAttribute="top" secondItem="z8e-HJ-cvb" secondAttribute="top" id="nxZ-Re-wl4"/>
-                            <constraint firstItem="Bh4-MW-GqV" firstAttribute="trailing" secondItem="Xb6-eD-UAi" secondAttribute="trailing" id="wbN-fZ-LxM"/>
-                            <constraint firstItem="Bh4-MW-GqV" firstAttribute="leading" secondItem="Xb6-eD-UAi" secondAttribute="leading" id="zUb-U0-KvO"/>
+                            <constraint firstItem="Bh4-MW-GqV" firstAttribute="trailing" secondItem="z8e-HJ-cvb" secondAttribute="trailing" id="wbN-fZ-LxM"/>
+                            <constraint firstItem="Bh4-MW-GqV" firstAttribute="leading" secondItem="z8e-HJ-cvb" secondAttribute="leading" id="zUb-U0-KvO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Xb6-eD-UAi"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="VY1-JV-zts"/>
                 </viewController>
